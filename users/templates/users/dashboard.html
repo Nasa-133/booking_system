@@ -1,0 +1,13 @@
+{# users/templates/users/dashboard.html #}
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+  <h2>Dashboard</h2>
+  <p>Welcome, {{ user.username }}!</p>
+  <p>This is your dashboard. Only logged-in users can see this page.</p>
+  <p><a href="{% url 'logout' %}">Logout</a></p>
+  {# Add more dashboard content here later #}
+{% endblock %}
+

@@ -1,0 +1,23 @@
+{# payments/templates/payments/payment_success.html #}
+{% extends "base.html" %}
+
+{% block title %}Payment Successful{% endblock %}
+
+{% block content %}
+  <h2>Payment Successful!</h2>
+
+  {% if booking.status == "confirmed" %}
+    <p>Your payment for booking #{{ booking.id }} ({{ booking.quantity }} ticket(s) for {{ booking.event.title }}) was successful.</p>
+    <p>Your booking is now confirmed. A confirmation email with your ticket(s) will be sent shortly.</p>
+    {# Add link to view booking details or user's bookings page #}
+    {# <p><a href="{% url 'booking_detail' booking.pk %}">View Booking Details</a></p> #}
+  {% else %}
+    {# This message might show briefly if the webhook hasn't updated the status yet #}
+    <p>Your payment is being processed. Your booking #{{ booking.id }} will be confirmed shortly.</p>
+    <p>You will receive a confirmation email once processed.</p>
+  {% endif %}
+
+  <p><a href="{% url 'event_list' %}">Browse More Events</a></p>
+
+{% endblock %}
+

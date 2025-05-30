@@ -1,0 +1,16 @@
+{# templates/home.html #}
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h2>Welcome to the Ticket Booking System</h2>
+  {% if user.is_authenticated %}
+    <p>You are logged in. You can browse events or manage your account.</p>
+    <p><a href="{% url 'dashboard' %}">Go to Dashboard (Protected View)</a></p>
+  {% else %}
+    <p>Please <a href="{% url 'login' %}">login</a> or <a href="{% url 'signup' %}">sign up</a> to book tickets.</p>
+  {% endif %}
+  {# Event listing will go here later #}
+{% endblock %}
+

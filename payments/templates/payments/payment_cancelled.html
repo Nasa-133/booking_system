@@ -1,0 +1,17 @@
+{# payments/templates/payments/payment_cancelled.html #}
+{% extends "base.html" %}
+
+{% block title %}Payment Cancelled{% endblock %}
+
+{% block content %}
+  <h2>Payment Cancelled</h2>
+
+  <p>Your payment process was cancelled or failed.</p>
+  <p>Your booking is still pending. If you wish to complete the booking, please try the payment process again from the event page or your bookings list (if available).</p>
+
+  {# Provide links to navigate away #}
+  <p><a href="{% url 'event_list' %}">Browse Events</a></p>
+  {# <p><a href="{% url 'user_bookings_list' %}">View My Bookings</a></p> #}
+
+{% endblock %}
+

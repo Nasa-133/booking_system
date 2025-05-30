@@ -1,0 +1,31 @@
+{# bookings/templates/bookings/ticket_template.html #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Ticket</title>
+    {# CSS is applied via WeasyPrint utility, no need for <style> here unless for specific structure #}
+</head>
+<body>
+    <h1>Event Ticket</h1>
+    
+    <div class="ticket-info">
+        <p><strong>Booking ID:</strong> #{{ booking.id }}</p>
+        <p><strong>Event:</strong> {{ booking.event.title }}</p>
+        <p><strong>Date:</strong> {{ booking.event.date|date:"F j, Y, P" }}</p>
+        <p><strong>Location:</strong> {{ booking.event.location }}</p>
+        <p><strong>Booked By:</strong> {{ booking.user.username }} ({{ booking.user.email }})</p>
+        <p><strong>Quantity:</strong> {{ booking.quantity }} ticket(s)</p>
+        <p><strong>Total Price Paid:</strong> ${{ booking.total_price }}</p>
+        <p><strong>Status:</strong> {{ booking.get_status_display }}</p>
+        <p><strong>Booked On:</strong> {{ booking.created_at|date:"F j, Y, H:i" }}</p>
+    </div>
+
+    <div class="footer">
+        Thank you for booking with us!
+        <br>
+        Please present this ticket at the event.
+    </div>
+</body>
+</html>
+

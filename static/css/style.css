@@ -1,0 +1,271 @@
+/* static/css/style.css */
+
+/* General Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    color: #495057;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+/* Navigation */
+nav {
+    background-color: #e9ecef;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+nav a, nav span {
+    margin-right: 15px;
+    color: #495057;
+    font-weight: 500;
+}
+
+nav a:last-child {
+    margin-right: 0;
+}
+
+/* Messages */
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.messages li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+}
+
+.messages .success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.messages .error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.messages .warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.messages .info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+/* Forms */
+form p {
+    margin-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form select,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+button,
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Event List */
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.event-card {
+    border: 1px solid #dee2e6;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.event-card p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #6c757d;
+    flex-grow: 1; /* Push button to bottom */
+}
+
+.event-card p strong {
+    color: #495057;
+}
+
+.event-card a.btn-details {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.event-card a.btn-details:hover {
+    background-color: #0056b3;
+}
+
+/* Event Detail */
+.event-details {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.booking-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.booking-section label {
+    margin-right: 10px;
+}
+
+.booking-section input[type="number"] {
+    width: 80px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a, nav span {
+        margin-bottom: 0.5rem;
+    }
+
+    .event-list {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .event-card,
+    .event-details {
+        padding: 1rem;
+    }
+
+    button,
+    input[type="submit"] {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    .booking-section input[type="number"] {
+        width: 60px;
+    }
+}
+

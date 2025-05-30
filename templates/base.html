@@ -1,0 +1,66 @@
+{# templates/base.html #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ticket Booking System{% endblock %}</title>
+    {# Basic Styling - Can be expanded later #}
+    <style>
+        body { font-family: sans-serif; margin: 20px; line-height: 1.6; }
+        nav { background-color: #f4f4f4; padding: 10px; margin-bottom: 20px; }
+        nav a { margin-right: 15px; text-decoration: none; color: #333; }
+        nav a:hover { text-decoration: underline; }
+        .container { max-width: 960px; margin: auto; padding: 0 20px; }
+        .messages { list-style: none; padding: 0; margin: 20px 0; }
+        .messages li { padding: 10px; margin-bottom: 10px; border-radius: 4px; }
+        .messages .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .messages .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        form p { margin-bottom: 10px; }
+        form label { display: block; margin-bottom: 5px; }
+        form input[type="text"], form input[type="email"], form input[type="password"], form select {
+            width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+        }
+        button, input[type="submit"] { background-color: #5cb85c; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover, input[type="submit"]:hover { background-color: #4cae4c; }
+        /* Basic Responsive */
+        @media (max-width: 600px) {
+            nav a { display: block; margin-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">Home</a>
+            {% if user.is_authenticated %}
+                <span>Welcome, {{ user.username }}!</span>
+                <a href="{% url 'logout' %}">Logout</a>
+                {# Add links to profile, bookings etc. here #}
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'signup' %}">Sign Up</a>
+            {% endif %}
+            <a href="/admin/">Admin</a> {# Link to Django Admin #}
+        </nav>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Ticket Booking System</p>
+        </footer>
+    </div>
+</body>
+</html>
+

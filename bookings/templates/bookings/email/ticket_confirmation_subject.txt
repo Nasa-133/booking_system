@@ -1,0 +1,1 @@
+Your Ticket Booking Confirmation for {{ booking.event.title }}

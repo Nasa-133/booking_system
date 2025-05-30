@@ -1,0 +1,22 @@
+Hi {{ booking.user.username }},
+
+Thank you for your booking!
+
+Your booking for the event "{{ booking.event.title }}" is confirmed.
+
+Booking Details:
+--------------------
+Booking ID: #{{ booking.id }}
+Event: {{ booking.event.title }}
+Date: {{ booking.event.date|date:"F j, Y, P" }}
+Location: {{ booking.event.location }}
+Quantity: {{ booking.quantity }} ticket(s)
+Total Paid: ${{ booking.total_price }}
+
+Please find your PDF ticket(s) attached to this email.
+
+We look forward to seeing you at the event!
+
+Best regards,
+The Ticket Booking System Team
+

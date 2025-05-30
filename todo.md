@@ -1,0 +1,21 @@
+# Online Ticket Booking System - ToDo List
+
+- [x] Scaffold Django project and core apps (users, events, bookings, payments)
+- [x] Implement user registration and login flow
+- [x] Configure project settings and environment variables
+- [x] Validate registration and login functionality
+- [x] Report and send initial project structure to user
+- [x] Define Event model
+- [x] Implement event search and listing view
+- [x] Create event list and detail templates
+- [x] Implement ticket selection and booking logic
+- [x] Create booking model and views
+- [x] Integrate Stripe for payments (test mode)
+- [x] Implement payment confirmation view
+- [x] Generate PDF tickets
+- [x] Implement email ticket delivery
+- [x] Set up Django admin panel for models
+- [x] Add basic responsive CSS styling
+- [x] Add comments to code
+- [x] Final testing and review
+- [x] Document Bridge Pattern usage in README.md
