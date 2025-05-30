@@ -29,9 +29,6 @@ class PaymentProcessor(abc.ABC):
         pass
 
 class StripePaymentProcessor(PaymentProcessor):
-    """ Concrete implementation of PaymentProcessor for Stripe.
-        This acts as the Concrete Implementor in the Bridge pattern.
-    """
     
     def __init__(self):
         stripe.api_key = settings.STRIPE_SECRET_KEY
